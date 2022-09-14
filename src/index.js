@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const app = require("./app");
+const dotenv = require('dotenv').config();
+
 
 const PORT = 3000;
-const urlMongoDB = "mongodb+srv://admin:1234@taskdb.3boyenr.mongodb.net/?retryWrites=true&w=majority";
+const urlMongoDB = process.env.urlMongo;
 
 mongoose.connect(urlMongoDB, (err,res) => {
     try {
